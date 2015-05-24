@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82991D6F-D554-41EE-AF8B-A110FCE19D00}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>eDmx.ArtNet</RootNamespace>
+    <AssemblyName>eDmx.ArtNet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UId.cs" />
+    <Compile Include="Sockets\ArtNetSocket.cs" />
+    <Compile Include="Sockets\NewPacketEventArgs.cs" />
+    <Compile Include="Packets\ArtNetDmxPacket.cs" />
+    <Compile Include="Packets\ArtNetPacket.cs" />
+    <Compile Include="Packets\ArtPollPacket.cs" />
+    <Compile Include="Packets\ArtPollReplyPacket.cs" />
+    <Compile Include="Packets\ArtTodControlPacket.cs" />
+    <Compile Include="Packets\ArtTodDataPacket.cs" />
+    <Compile Include="Packets\ArtTodRequestPacket.cs" />
+    <Compile Include="IO\ArtNetBinaryReader.cs" />
+    <Compile Include="IO\ArtNetBinaryWriter.cs" />
+    <Compile Include="IO\ArtNetRecieveData.cs" />
+    <Compile Include="Enums\ArtNetOpCodes.cs" />
+    <Compile Include="Enums\ArtTodControlCommand.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Enums\" />
+    <Folder Include="IO\" />
+    <Folder Include="Packets\" />
+    <Folder Include="Sockets\" />
+  </ItemGroup>
+</Project>
